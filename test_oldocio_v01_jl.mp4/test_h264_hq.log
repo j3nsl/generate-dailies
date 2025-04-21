@@ -1,0 +1,108 @@
+DEBUG	 2025-04-21T11:19:51 	Got config:
+	Codec Config:	h264_hq
+	Image Sequence Path:
+		C:\Users\jens\Desktop\generate-dailies\test_sequence\test.1-10.exr
+DEBUG	 2025-04-21T11:19:51 	Output width x height: 1920x1080
+INFO	 2025-04-21T11:19:51 	ffmpeg command:
+	ffmpeg -hide_banner -loglevel info -y -f rawvideo -pixel_format rgb48le -video_size 1920x1080 -framerate 24 -i pipe:0 -timecode 00:00:00:01 -c:v libx264 -profile:v high444 -preset slower -g 1 -tune film -crf 13 -pix_fmt yuv444p10le -r 24 -vf colormatrix=bt601:bt709 test_oldocio_v01_jl.mp4\test_h264_hq.mov
+INFO	 2025-04-21T11:19:51 	Processing frame 0001: 	0001 of 0010
+DEBUG	 2025-04-21T11:19:51 	Applying OCIO Config: 
+	C:\Users\jens\Desktop\generate-dailies\ocio1-aces1.2\config.ocio
+	lin_srgb -> Output - sRGB
+INFO	 2025-04-21T11:19:53 	Performing Resize: 
+			input: 640x480 ar1.3333333333333333
+			output: 1920x1080 ar1.7777777777777777
+DEBUG	 2025-04-21T11:19:53 	iwidth does not equal output_width: oheight noar: 1440, pxfilter: None
+DEBUG	 2025-04-21T11:19:53 	Height difference: -360 1080 1440
+INFO	 2025-04-21T11:19:53 	Frame Processing Time: 	0:00:01.776670
+INFO	 2025-04-21T11:19:53 	Processing frame 0002: 	0002 of 0010
+DEBUG	 2025-04-21T11:19:53 	Applying OCIO Config: 
+	C:\Users\jens\Desktop\generate-dailies\ocio1-aces1.2\config.ocio
+	lin_srgb -> Output - sRGB
+INFO	 2025-04-21T11:19:53 	Performing Resize: 
+			input: 640x480 ar1.3333333333333333
+			output: 1920x1080 ar1.7777777777777777
+DEBUG	 2025-04-21T11:19:53 	iwidth does not equal output_width: oheight noar: 1440, pxfilter: None
+DEBUG	 2025-04-21T11:19:53 	Height difference: -360 1080 1440
+INFO	 2025-04-21T11:19:53 	Frame Processing Time: 	0:00:00.202142
+INFO	 2025-04-21T11:19:53 	Processing frame 0003: 	0003 of 0010
+DEBUG	 2025-04-21T11:19:53 	Applying OCIO Config: 
+	C:\Users\jens\Desktop\generate-dailies\ocio1-aces1.2\config.ocio
+	lin_srgb -> Output - sRGB
+INFO	 2025-04-21T11:19:53 	Performing Resize: 
+			input: 640x480 ar1.3333333333333333
+			output: 1920x1080 ar1.7777777777777777
+DEBUG	 2025-04-21T11:19:53 	iwidth does not equal output_width: oheight noar: 1440, pxfilter: None
+DEBUG	 2025-04-21T11:19:53 	Height difference: -360 1080 1440
+INFO	 2025-04-21T11:19:53 	Frame Processing Time: 	0:00:00.198585
+INFO	 2025-04-21T11:19:53 	Processing frame 0004: 	0004 of 0010
+DEBUG	 2025-04-21T11:19:53 	Applying OCIO Config: 
+	C:\Users\jens\Desktop\generate-dailies\ocio1-aces1.2\config.ocio
+	lin_srgb -> Output - sRGB
+INFO	 2025-04-21T11:19:54 	Performing Resize: 
+			input: 640x480 ar1.3333333333333333
+			output: 1920x1080 ar1.7777777777777777
+DEBUG	 2025-04-21T11:19:54 	iwidth does not equal output_width: oheight noar: 1440, pxfilter: None
+DEBUG	 2025-04-21T11:19:54 	Height difference: -360 1080 1440
+INFO	 2025-04-21T11:19:54 	Frame Processing Time: 	0:00:00.205608
+INFO	 2025-04-21T11:19:54 	Processing frame 0005: 	0005 of 0010
+DEBUG	 2025-04-21T11:19:54 	Applying OCIO Config: 
+	C:\Users\jens\Desktop\generate-dailies\ocio1-aces1.2\config.ocio
+	lin_srgb -> Output - sRGB
+INFO	 2025-04-21T11:19:54 	Performing Resize: 
+			input: 640x480 ar1.3333333333333333
+			output: 1920x1080 ar1.7777777777777777
+DEBUG	 2025-04-21T11:19:54 	iwidth does not equal output_width: oheight noar: 1440, pxfilter: None
+DEBUG	 2025-04-21T11:19:54 	Height difference: -360 1080 1440
+INFO	 2025-04-21T11:19:54 	Frame Processing Time: 	0:00:00.210594
+INFO	 2025-04-21T11:19:54 	Processing frame 0006: 	0006 of 0010
+DEBUG	 2025-04-21T11:19:54 	Applying OCIO Config: 
+	C:\Users\jens\Desktop\generate-dailies\ocio1-aces1.2\config.ocio
+	lin_srgb -> Output - sRGB
+INFO	 2025-04-21T11:19:54 	Performing Resize: 
+			input: 640x480 ar1.3333333333333333
+			output: 1920x1080 ar1.7777777777777777
+DEBUG	 2025-04-21T11:19:54 	iwidth does not equal output_width: oheight noar: 1440, pxfilter: None
+DEBUG	 2025-04-21T11:19:54 	Height difference: -360 1080 1440
+INFO	 2025-04-21T11:19:54 	Frame Processing Time: 	0:00:00.201716
+INFO	 2025-04-21T11:19:54 	Processing frame 0007: 	0007 of 0010
+DEBUG	 2025-04-21T11:19:54 	Applying OCIO Config: 
+	C:\Users\jens\Desktop\generate-dailies\ocio1-aces1.2\config.ocio
+	lin_srgb -> Output - sRGB
+INFO	 2025-04-21T11:19:54 	Performing Resize: 
+			input: 640x480 ar1.3333333333333333
+			output: 1920x1080 ar1.7777777777777777
+DEBUG	 2025-04-21T11:19:54 	iwidth does not equal output_width: oheight noar: 1440, pxfilter: None
+DEBUG	 2025-04-21T11:19:54 	Height difference: -360 1080 1440
+INFO	 2025-04-21T11:19:54 	Frame Processing Time: 	0:00:00.214740
+INFO	 2025-04-21T11:19:54 	Processing frame 0008: 	0008 of 0010
+DEBUG	 2025-04-21T11:19:54 	Applying OCIO Config: 
+	C:\Users\jens\Desktop\generate-dailies\ocio1-aces1.2\config.ocio
+	lin_srgb -> Output - sRGB
+INFO	 2025-04-21T11:19:54 	Performing Resize: 
+			input: 640x480 ar1.3333333333333333
+			output: 1920x1080 ar1.7777777777777777
+DEBUG	 2025-04-21T11:19:54 	iwidth does not equal output_width: oheight noar: 1440, pxfilter: None
+DEBUG	 2025-04-21T11:19:54 	Height difference: -360 1080 1440
+INFO	 2025-04-21T11:19:55 	Frame Processing Time: 	0:00:00.205059
+INFO	 2025-04-21T11:19:55 	Processing frame 0009: 	0009 of 0010
+DEBUG	 2025-04-21T11:19:55 	Applying OCIO Config: 
+	C:\Users\jens\Desktop\generate-dailies\ocio1-aces1.2\config.ocio
+	lin_srgb -> Output - sRGB
+INFO	 2025-04-21T11:19:55 	Performing Resize: 
+			input: 640x480 ar1.3333333333333333
+			output: 1920x1080 ar1.7777777777777777
+DEBUG	 2025-04-21T11:19:55 	iwidth does not equal output_width: oheight noar: 1440, pxfilter: None
+DEBUG	 2025-04-21T11:19:55 	Height difference: -360 1080 1440
+INFO	 2025-04-21T11:19:55 	Frame Processing Time: 	0:00:00.212913
+INFO	 2025-04-21T11:19:55 	Processing frame 0010: 	0010 of 0010
+DEBUG	 2025-04-21T11:19:55 	Applying OCIO Config: 
+	C:\Users\jens\Desktop\generate-dailies\ocio1-aces1.2\config.ocio
+	lin_srgb -> Output - sRGB
+INFO	 2025-04-21T11:19:55 	Performing Resize: 
+			input: 640x480 ar1.3333333333333333
+			output: 1920x1080 ar1.7777777777777777
+DEBUG	 2025-04-21T11:19:55 	iwidth does not equal output_width: oheight noar: 1440, pxfilter: None
+DEBUG	 2025-04-21T11:19:55 	Height difference: -360 1080 1440
+INFO	 2025-04-21T11:19:55 	Frame Processing Time: 	0:00:00.211747
+INFO	 2025-04-21T11:19:56 	Total Processing Time: 	0:00:04.543785

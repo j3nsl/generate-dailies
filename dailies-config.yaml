@@ -1,13 +1,9 @@
 globals:
   # Path to the ocio config to use
-  ocioconfig: "C:\\Users\\jens\\Desktop\\generate-dailies\\ocio2-v01-lin_sRGB-BUCK\\config.ocio"
+  ocioconfig: "C:\\Users\\jens\\Desktop\\generate-dailies\\ocio1-aces1.2\\config.ocio"
   # Default ocio profile to use if not specified on the commandline
-  # ocio_default_transform: Buck SoftRolloff (Default)
-  ocio_default_transform: Un-tone-mapped
-  # set default view transform
-  ocio_default_view: BUCK SoftRolloff (Default)
-  # ocio default display
-  ocio_default_display: sRGB Display
+  ocio_default_transform: scene_linear
+  ocio_default_colorspace: lin_srgb
 
   ###############################################
   ## Reformatting and Cropping
@@ -47,11 +43,20 @@ globals:
 ###############################################
 
 ocio_profiles:
-  grade:
-    # ocio colorspace conversion: [src_colorspace, dst_colorspace]
-    ociocolorconvert: ["linear", "client_grade"]
-  show_log:
-    ociocolorconvert: ["linear", "REDLog3G10"]
+  scene_linear:
+    ociocolorconvert: ["lin_srgb", "Output - sRGB"]
+  aces:
+    ociocolorconvert: ["ACEScg", "ACES2065-1"]
+  acescct:
+    ociocolorconvert: ["ACEScct", "ACES2065-1"]
+  arri:
+    ociocolorconvert: ["ARRI LogC (v3-EI800) / AlexaWideGamut", "ACES2065-1"]
+  red:
+    ociocolorconvert: ["RED Log3G10 / REDWideGamutRGB", "ACES2065-1"]
+  sony:
+    ociocolorconvert: ["Sony SLog3 / SGamut3", "ACES2065-1"]
+  raw:
+    ociocolorconvert: ["Raw", "Raw"]
 
 ###############################################
 ## Dailies Overlay Profiles
