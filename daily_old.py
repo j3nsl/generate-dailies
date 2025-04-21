@@ -232,28 +232,48 @@ class GenerateDaily():
 
         # Get default ocio transform to use if none is passed by commandline
         ocio_default_transform = self.globals_config.get("ocio_default_transform")
+        ocio_default_colorspace = self.globals_config.get("ocio_default_colorspace")
 
         # Set self.ociocolorconvert: the colorspace transformation to use in processing
         if commandline_ocio_profile:
             # Check if specified ocio profile exists in the config
             if commandline_ocio_profile in ocio_profiles.keys():
                 self.ociocolorconvert = ocio_profiles.get(commandline_ocio_profile).get('ociocolorconvert')
+                print("\nColor Space Information:")
+                print(f"Using command line specified OCIO profile: {commandline_ocio_profile}")
+                print(f"Source colorspace: {self.ociocolorconvert[0]}")
+                print(f"Destination colorspace: {self.ociocolorconvert[1]}")
             else:
-                print("Error: OCIO color transform {0} does not exist in config. Falling back to default {1}".format(commandline_ocio_profile, ocio_default_transform))
-                self.ociocolorconvert = ocio_profiles.get(ocio_default_transform).get('ociocolorconvert')
+                print(f"\nError: OCIO color transform {commandline_ocio_profile} does not exist in config.")
+                if ocio_default_transform in ocio_profiles.keys():
+                    print(f"Falling back to default transform: {ocio_default_transform}")
+                    self.ociocolorconvert = ocio_profiles.get(ocio_default_transform).get('ociocolorconvert')
+                    print(f"Source colorspace: {self.ociocolorconvert[0]}")
+                    print(f"Destination colorspace: {self.ociocolorconvert[1]}")
+                else:
+                    print(f"Error: Default OCIO transform {ocio_default_transform} also not found in config.")
+                    self.ociocolorconvert = None
         elif ocio_default_transform:
-            self.ociocolorconvert = ocio_profiles.get(ocio_default_transform).get('ociocolorconvert')
+            # Check if default ocio transform exists in the config
+            if ocio_default_transform in ocio_profiles.keys():
+                self.ociocolorconvert = ocio_profiles.get(ocio_default_transform).get('ociocolorconvert')
+                print("\nColor Space Information:")
+                print(f"Using default OCIO profile: {ocio_default_transform}")
+                print(f"Source colorspace: {self.ociocolorconvert[0]}")
+                print(f"Destination colorspace: {self.ociocolorconvert[1]}")
+            else:
+                print(f"\nError: OCIO color transform {ocio_default_transform} does not exist in config.")
+                self.ociocolorconvert = None
         else:
             # No ocio color transform specified
-            print("Warning: No default ocio transform specified, and no transform specified on the commandline. No color transform will occur.")
+            print("\nWarning: No OCIO color transform specified.")
+            print("No color transform will be applied.")
             self.ociocolorconvert = None
 
-        # Only colorconvert is implemented for now
-        # self.ociolook = self.globals_config.get('ociolook')
-        # self.ociodisplay = self.globals_config.get('ociodisplay')
-        # self.ocioview = self.globals_config.get('ocioview')
-
-
+        # Print OCIO config path
+        print(f"\nOCIO Config Path: {self.ocioconfig}")
+        if not os.path.exists(self.ocioconfig):
+            print("Warning: OCIO Config file not found at specified path!")
 
         # Anything with the same name in the codec config overrides the globals
         for key, value in self.codec_config.items():

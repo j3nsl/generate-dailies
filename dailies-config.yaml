@@ -1,9 +1,14 @@
 globals:
   # Path to the ocio config to use
-  ocioconfig: "C:\\Users\\jens\\Desktop\\generate-dailies\\ocio1-aces1.2\\config.ocio"
+  # legacy config
+  # ocioconfig: "C:\\Users\\jens\\Desktop\\generate-dailies\\ocio1-aces1.2\\config.ocio"
+  # new ocio v2 buck custom config
+  # ocioconfig: "C:\\Users\\jens\\Desktop\\generate-dailies\\ocio2-v01-lin_sRGB-BUCK\\config.ocio"
+  # stock new config
+  ocioconfig: "C:\\Users\\jens\\Desktop\\generate-dailies\\cg-config-v1.0.0_aces-v1.3_ocio-v2.0\\config.ocio"
   # Default ocio profile to use if not specified on the commandline
-  ocio_default_transform: scene_linear
-  ocio_default_colorspace: lin_srgb
+  ocio_default_transform: BUCK SoftRolloff (Default)
+  ocio_default_colorspace: scene-linear Rec.709-sRGB
 
   ###############################################
   ## Reformatting and Cropping
@@ -44,7 +49,9 @@ globals:
 
 ocio_profiles:
   scene_linear:
-    ociocolorconvert: ["lin_srgb", "Output - sRGB"]
+    # ociocolorconvert: ["lin_srgb", "Output - sRGB"]
+    # ociocolorconvert: ["scene-linear Rec.709-sRGB", "BUCK SoftRolloff (Default)"]
+    ociocolorconvert: ["lin_srgb", "Un-tone-mapped"]
   aces:
     ociocolorconvert: ["ACEScg", "ACES2065-1"]
   acescct:
