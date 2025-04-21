@@ -275,6 +275,20 @@ class GenerateDaily():
         if not os.path.exists(self.ocioconfig):
             print("Warning: OCIO Config file not found at specified path!")
 
+        # Set up view transform if specified
+        self.ocioview = None
+        if self.globals_config.get('ocio_view'):
+            self.ocioview = self.globals_config.get('ocio_view')
+            print(f"Using view transform: {self.ocioview}")
+
+        # Set up display if specified
+        self.ociodisplay = None
+        if self.globals_config.get('ocio_display'):
+            self.ociodisplay = self.globals_config.get('ocio_display')
+            print(f"Using display: {self.ociodisplay}")
+
+        print("\n=== Moving to OIIO Image Processing ===")
+
         # Anything with the same name in the codec config overrides the globals
         for key, value in self.codec_config.items():
             if key in self.globals_config:
